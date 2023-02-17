@@ -62,8 +62,8 @@ def calc_second_tax(fuel_type):
     else:
         return 155
 print("UK vehicle tax calculator by therealnaail (information from gov.uk/vehicle-tax-rate-tables)")
-emissions = int(input("Enter the CO2 emissions of your vehicle: "))
-fuel_type = input("Enter the fuel type of your vehicle (Petrol, Diesel, Electric, Alternative): ")
+emissions = int(input("Enter the CO2 emissions of your vehicle in g/km: "))
+fuel_type = input("Enter the fuel type of your vehicle (Petrol, Diesel, Electric or Alternative): ")
 
 first_tax = calc_tax(emissions, fuel_type)
 second_tax = calc_second_tax(fuel_type)
