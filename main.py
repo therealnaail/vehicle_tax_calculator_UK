@@ -65,6 +65,9 @@ print("UK vehicle tax calculator by therealnaail (information from gov.uk/vehicl
 emissions = int(input("Enter the CO2 emissions of your vehicle in g/km: "))
 fuel_type = input("Enter the fuel type of your vehicle (Petrol, Diesel, Electric or Alternative): ")
 
+while fuel_type not in ["Petrol", "Diesel", "Electric", "Alternative"]:
+    fuel_type = input("Invalid fuel type. Please enter a valid fuel type: ")
+
 first_tax = calc_tax(emissions, fuel_type)
 second_tax = calc_second_tax(fuel_type)
 
