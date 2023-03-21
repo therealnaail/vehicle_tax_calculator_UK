@@ -62,7 +62,8 @@ def calc_second_tax(fuel_type):
     else:
         return 155
 print("UK vehicle tax calculator by therealnaail (information from gov.uk/vehicle-tax-rate-tables)")
-emissions = int(input("Enter the CO2 emissions of your vehicle in g/km: "))
+try:
+    emissions = int(input("Enter the CO2 emissions of your vehicle in g/km: "))
 except ValueError:
     print("Invalid input for CO2 emissions. Please enter a valid integer value.")
     exit()
@@ -74,7 +75,7 @@ while fuel_type not in ["Petrol", "Diesel", "Electric", "Alternative"]:
 first_tax = calc_tax(emissions, fuel_type)
 second_tax = calc_second_tax(fuel_type)
 
-if type(first_tax) and type(second_tax) == int:
+if isinstance(first_tax, int) and isinstance(second_tax, int):
     print("Your vehicle's first tax payment is £" + str(first_tax))
     print("Your second tax payment onwards is £" + str(second_tax))
 else:
